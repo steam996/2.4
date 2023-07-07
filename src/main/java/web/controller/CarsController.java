@@ -17,7 +17,7 @@ public class CarsController {
 
     @GetMapping("/cars")
     public String showCars(@RequestParam(value = "count") Optional<Integer> count, Model model) {
-        model.addAttribute("cars", carService.cars(count.orElse(0)));
+        model.addAttribute("cars", carService.cars(count.orElse(5)));
         return "cars";
     }
 }
